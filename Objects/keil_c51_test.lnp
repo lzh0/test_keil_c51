@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\keil_c51_test" 
+PRINT(".\Listings\keil_c51_test.m51") RAMSIZE(256) 
