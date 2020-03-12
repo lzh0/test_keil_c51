@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        03/12/2020  10:48:35  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/12/2020  11:30:56  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -28,7 +28,8 @@ LINK MAP OF MODULE:  .\Objects\keil_c51_test (?C_STARTUP)
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
             CODE    0800H     000CH     UNIT         ?C_C51STARTUP
-            CODE    080CH     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    080CH     000BH     UNIT         ?PR?MAIN?MAIN
+            CODE    0817H     0004H     UNIT         ?PR?FUN?MAIN
 
 
 
@@ -40,6 +41,9 @@ SEGMENT
 ---------------------
 ?C_C51STARTUP
   +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?FUN?MAIN
 
 
 
@@ -55,13 +59,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\keil_c51_test (?C_STARTUP)
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
   D:0083H         SYMBOL        DPH
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2020  11:30:56  PAGE 2
+
+
   D:0082H         SYMBOL        DPL
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2020  10:48:35  PAGE 2
-
-
   C:0803H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
@@ -95,6 +99,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\keil_c51_test (?C_STARTUP)
   C:080CH         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
+  C:0817H         PUBLIC        fun
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
@@ -103,12 +108,21 @@ SYMBOL TABLE OF MODULE:  .\Objects\keil_c51_test (?C_STARTUP)
   C:080CH         LINE#         5
   C:080FH         LINE#         6
   C:0812H         LINE#         7
+  C:0815H         LINE#         8
   -------         ENDPROC       MAIN
+  -------         PROC          FUN
+  C:0817H         LINE#         12
+  C:0817H         LINE#         13
+  C:081AH         LINE#         14
+  -------         ENDPROC       FUN
   -------         ENDMOD        MAIN
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0017H BYTE ( 1%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 001EH BYTE ( 1%) *
+BL51 BANKED LINKER/LOCATER V6.22                                                      03/12/2020  11:30:56  PAGE 3
+
+
 ******************************************************************************
 
-Program Size: data=9.0 xdata=0 code=23
+Program Size: data=9.0 xdata=0 code=30
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
